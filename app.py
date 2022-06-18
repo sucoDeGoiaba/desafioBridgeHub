@@ -1,25 +1,16 @@
 from flask import Flask, jsonify, request
 import sqlite3
+from model_usuario import Usuario
+from db_con import db_conexao
 
 app = Flask(__name__)
 
-def db_conexao():
-    con = None
-    try:
-        con = sqlite3.connect('usuarios.db')
-    except sqlite3.error as e:
-        print(e)
-    return con
 
 @app.route('/users/', methods=['GET'])
 def users():
-    con = db_conexao()
-    rows = con.execute("SELECT * FROM usuarios")
-    usuarios = [
-        dict(id=row[0], nome=row[1], email=row[2], telefone=row[3])
-        for row in rows.fetchall()
-    ]
-    return jsonify(usuarios)
+    # Instancia com a model
+    inst = Usuario(db_conexao())
+    return jsonify(inst.show_users())
 
 
 @app.route('/user/<id>', methods=['GET'])
