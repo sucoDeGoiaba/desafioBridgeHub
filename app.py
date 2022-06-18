@@ -15,13 +15,8 @@ def users():
 
 @app.route('/user/<id>', methods=['GET'])
 def user_id(id):
-    con = db_conexao()
-    query = con.execute('SELECT * FROM usuarios WHERE id = ?', id)
-    usuario = [
-        dict(id=row[0], nome=row[1], email=row[2], telefone=row[3])
-        for row in query.fetchall()
-    ]
-    return jsonify(usuario)
+    inst = Usuario(db_conexao())
+    return jsonify(inst.show_users_by_id(id))
     
 
 @app.route('/add_user/', methods=['POST'])

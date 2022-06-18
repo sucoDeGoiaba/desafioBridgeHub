@@ -16,3 +16,12 @@ class Usuario:
         ]
         # E retorna para a controller (app)
         return usuarios
+
+    def show_users_by_id(self, id):
+        res = self.dao.show_users_by_id(id)
+        usuario = [
+        dict(id=res[0], nome=res[1], email=res[2], telefone=res[3])
+            for res in res.fetchall()
+        ]
+        return usuario
+        
