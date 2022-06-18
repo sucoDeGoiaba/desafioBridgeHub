@@ -1,4 +1,41 @@
-# desafioBridgeHub
+# Desafio - BridgeHub
+
+## Instalando aplicação:
+Abra o terminal/Powershell e rode os comandos abaixo:
+
+Clonando o repositório:
+
+Via HTTPS:
+```
+git clone https://github.com/sucoDeGoiaba/desafioBridgeHub.git
+```
+
+Via SSH:
+```
+git clone https://github.com/sucoDeGoiaba/desafioBridgeHub.git
+```
+
+Entrando na pasta:
+```
+cd desafioBridgeHub
+```
+
+Instalando dependências:
+```
+pip install -r requirements.txt
+```
+
+Criando tabelas no banco de dados:
+```
+python db_setup.py
+```
+
+
+Iniciando o servidor:
+```
+python app.py
+```
+
 
 ## Rotas implementadas:
 
