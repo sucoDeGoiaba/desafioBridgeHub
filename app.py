@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import sqlite3
 
 app = Flask(__name__)
@@ -20,3 +20,18 @@ def users():
         for row in rows.fetchall()
     ]
     return jsonify(usuarios)
+
+
+@app.route('/user/<id>', methods=['GET'])
+def user_id(id):
+    con = db_conexao()
+    query = con.execute('SELECT * FROM usuarios WHERE id = ?', id)
+    usuario = [
+        dict(id=row[0], nome=row[1], email=row[2], telefone=row[3])
+        for row in query.fetchall()
+    ]
+    return jsonify(usuario)
+    
+
+if __name__ == '__main__':
+    app.run(debug=True)
