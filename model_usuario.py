@@ -1,5 +1,4 @@
 import sqlite3
-from schema_usuario import SchemaUsuario
 from dao_usuario import DaoUsuario
 
 
