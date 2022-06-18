@@ -1,5 +1,11 @@
 # Desafio - BridgeHub
 
+## Deploy:
+URL base:
+```
+https://bridgehub-desafio.herokuapp.com/
+```
+
 ## Instalando aplicação:
 Abra o terminal/Powershell e rode os comandos abaixo:
 
@@ -35,7 +41,6 @@ Iniciando o servidor:
 ```
 python app.py
 ```
-
 
 ## Rotas implementadas:
 
