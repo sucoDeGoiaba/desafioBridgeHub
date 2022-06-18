@@ -20,3 +20,8 @@ class DaoUsuario:
         self.db.execute('UPDATE usuarios SET nome = ?, email = ?, telefone = ? WHERE id = ?', (nome, email, telefone, id))
         self.db.commit()
         return 'Usuário editado!'
+
+    def delete_user(self, id):
+        self.db.execute('DELETE FROM usuarios WHERE ID = ?', id)
+        self.db.commit()
+        return 'Usuário deletado'

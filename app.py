@@ -39,11 +39,9 @@ def edit_user(id):
 
 @app.route('/delete_user/', methods=['DELETE'])
 def delete_user():
-    con = db_conexao()
+    inst = Usuario(db_conexao())
     id = str(request.json['id'])
-    query = con.execute('DELETE FROM usuarios WHERE ID = ?', id)
-    con.commit()
-    return jsonify(query.lastrowid)
+    return jsonify(inst.delete_user(id))
 
 
 if __name__ == '__main__':

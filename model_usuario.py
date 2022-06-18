@@ -32,3 +32,7 @@ class Usuario:
     def edit_user(self, id, nome, email, telefone):
         res = self.dao.edit_user(id, nome, email, telefone)
         return res
+    
+    def delete_user(self, id):
+        res = self.dao.delete_user(id)
+        return res
