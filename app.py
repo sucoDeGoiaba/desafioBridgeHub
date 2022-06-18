@@ -54,7 +54,16 @@ def edit_user(id):
     query = con.execute('UPDATE usuarios SET nome = ?, email = ?, telefone = ? WHERE id = ?', (nome, email, telefone, id))
     con.commit()
     return jsonify(query.lastrowid)
-    
+
+
+@app.route('/delete_user/', methods=['DELETE'])
+def delete_user():
+    con = db_conexao()
+    id = str(request.json['id'])
+    query = con.execute('DELETE FROM usuarios WHERE ID = ?', id)
+    con.commit()
+    return jsonify(query.lastrowid)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
