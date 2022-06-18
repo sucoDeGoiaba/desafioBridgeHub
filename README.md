@@ -73,7 +73,8 @@
     ```
 
 * **DELETE /delete_user/**
-        Schema da requisição
+
+    Schema da requisição
     ```
     {
         "id" : <Integer>,
