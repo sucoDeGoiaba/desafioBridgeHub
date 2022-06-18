@@ -10,3 +10,8 @@ class DaoUsuario:
     def show_users_by_id(self, id):
         row = self.db.execute('SELECT * FROM usuarios WHERE id = ?', id)
         return row
+
+    def add_user(self, nome, email, telefone):
+        self.db.execute('INSERT INTO usuarios (nome, email, telefone) VALUES (?, ?, ?)', (nome, email, telefone))
+        self.db.commit()
+        return 'Usuário adicionado!'

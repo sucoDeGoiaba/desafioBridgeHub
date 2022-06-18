@@ -21,14 +21,11 @@ def user_id(id):
 
 @app.route('/add_user/', methods=['POST'])
 def add_user():
-    con = db_conexao()
+    inst = Usuario(db_conexao())
     nome = request.json['nome']
     email = request.json["email"]
     telefone = request.json["telefone"]
-
-    query = con.execute('INSERT INTO usuarios (nome, email, telefone) VALUES (?, ?, ?)', (nome, email, telefone))
-    con.commit()
-    return jsonify(query.lastrowid)
+    return jsonify(inst.add_user(nome, email, telefone))
 
 
 @app.route('/edit_user/<id>', methods=['PUT'])
