@@ -44,5 +44,17 @@ def add_user():
     con.commit()
     return jsonify(query.lastrowid)
 
+
+@app.route('/edit_user/<id>', methods=['PUT'])
+def edit_user(id):
+    con = db_conexao()
+    nome = request.json['nome']
+    email = request.json["email"]
+    telefone = request.json["telefone"]
+    query = con.execute('UPDATE usuarios SET nome = ?, email = ?, telefone = ? WHERE id = ?', (nome, email, telefone, id))
+    con.commit()
+    return jsonify(query.lastrowid)
+    
+
 if __name__ == '__main__':
     app.run(debug=True)
