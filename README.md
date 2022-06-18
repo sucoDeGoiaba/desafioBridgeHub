@@ -1,10 +1,12 @@
 # Desafio - BridgeHub
 
 ## Deploy:
-URL base:
-```
-https://bridgehub-desafio.herokuapp.com/
-```
+Link Deploy:
+<https://bridgehub-desafio.herokuapp.com/>
+
+Para utilização basta concatenar URL base com as rotas.
+Exemplo: 
+https://bridgehub-desafio.herokuapp.com/users/
 
 ## Instalando aplicação:
 Abra o terminal/Powershell e rode os comandos abaixo:
@@ -35,7 +37,6 @@ Criando tabelas no banco de dados:
 ```
 python db_setup.py
 ```
-
 
 Iniciando o servidor:
 ```
