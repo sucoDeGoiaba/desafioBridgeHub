@@ -26,5 +26,9 @@ class Usuario:
         return usuario
         
     def add_user(self, nome, email, telefone):
-        gang = self.dao.add_user(nome, email, telefone)
-        return gang
+        res = self.dao.add_user(nome, email, telefone)
+        return res
+
+    def edit_user(self, id, nome, email, telefone):
+        res = self.dao.edit_user(id, nome, email, telefone)
+        return res

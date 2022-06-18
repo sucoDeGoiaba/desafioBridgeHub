@@ -30,13 +30,11 @@ def add_user():
 
 @app.route('/edit_user/<id>', methods=['PUT'])
 def edit_user(id):
-    con = db_conexao()
+    inst = Usuario(db_conexao())
     nome = request.json['nome']
     email = request.json["email"]
     telefone = request.json["telefone"]
-    query = con.execute('UPDATE usuarios SET nome = ?, email = ?, telefone = ? WHERE id = ?', (nome, email, telefone, id))
-    con.commit()
-    return jsonify(query.lastrowid)
+    return jsonify(inst.edit_user(id, nome, email, telefone))
 
 
 @app.route('/delete_user/', methods=['DELETE'])
