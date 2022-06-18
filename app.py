@@ -12,7 +12,7 @@ def users():
     return jsonify(usuarios = inst.show_users())
 
 
-@app.route('/user/<id>', methods=['GET'])
+@app.route('/users/<id>', methods=['GET'])
 def user_id(id):
     inst = Usuario(db_conexao())
     return jsonify(usuario = inst.show_users_by_id(id))
