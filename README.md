@@ -2,9 +2,11 @@
 
 ## Deploy:
 Link Deploy:
+
 <https://bridgehub-desafio.herokuapp.com/>
 
 Para utilização basta concatenar URL base com as rotas.
+
 Exemplo: 
 https://bridgehub-desafio.herokuapp.com/users/
 
