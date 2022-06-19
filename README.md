@@ -8,6 +8,7 @@ Link Deploy:
 Para utilização basta concatenar URL base com as rotas.
 
 Exemplo: 
+
 https://bridgehub-desafio.herokuapp.com/users/
 
 ## Instalando aplicação:
@@ -22,7 +23,7 @@ git clone https://github.com/sucoDeGoiaba/desafioBridgeHub.git
 
 Via SSH:
 ```
-git clone https://github.com/sucoDeGoiaba/desafioBridgeHub.git
+git clone git@github.com:sucoDeGoiaba/desafioBridgeHub.git
 ```
 
 Entrando na pasta:
@@ -65,7 +66,7 @@ python app.py
     }
     ```
 
-* **GET /users/<id>**
+* **GET /users/{id}**
  
     Schema da resposta
     ```
@@ -99,7 +100,7 @@ python app.py
     }
     ```
 
-* **PUT /edit_user/<id>**
+* **PUT /edit_user/{id}**
  
     Schema da requisição
     ```
